@@ -114,7 +114,7 @@ spec:
     - metadata:
         name: es-data
         annotations:
-          volume.beta.kubernetes.io/storage-class: sc-sky-es
+          volume.beta.kubernetes.io/storage-class: nfs-sky-es
       spec:
         accessModes: [ "ReadWriteOnce" ]
         resources:
