@@ -30,11 +30,11 @@ spec:
         - name: PROVISIONER_NAME
           value: fuseim.pri/ifs
         - name: NFS_SERVER
-          value: 192.168.17.206
+          value: 192.168.37.30
         - name: NFS_PATH
           value: /data/nfs/elasticsearch
       volumes:
       - name: nfs-client-root
         nfs:
-          server: 192.168.17.206
+          server: 192.168.37.30
           path: /data/nfs/elasticsearch
