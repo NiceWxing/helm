@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hotes-cluster
+spec:
+  rules:
+    - host: www.sxzqes.com
+      http:
+        paths:
+          - backend:
+              serviceName: hotes-cluster-9200
+              servicePort: 9200
+            path: /

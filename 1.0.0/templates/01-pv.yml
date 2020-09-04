@@ -1,0 +1,16 @@
+# 在node xuhe-latop
+# 上创建一个本地磁盘local-pv 对应的本地路径为/data
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: elasticsearch
+spec:
+  capacity:
+    storage: 50Gi
+  accessModes:
+  - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: local-storage
+  nfs:
+    path: /data/elasticsearch
+    server: 192.168.17.206

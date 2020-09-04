@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: nfs-sky-es
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: nfs-sky-es
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: nfs-sky-es
+  template:
+    metadata:
+      labels:
+        app: nfs-sky-es
+    spec:
+      serviceAccount: nfs-sky-es
+      containers:
+      - name: nfs-sky-es
+        image: quay.io/external_storage/nfs-client-provisioner:latest
+        volumeMounts:
+        - name: nfs-client-root
+          mountPath: /persistentvolumes
+        env:
+        - name: PROVISIONER_NAME
+          value: fuseim.pri/ifs
+        - name: NFS_SERVER
+          value: 192.168.17.206
+        - name: NFS_PATH
+          value: /data/nfs/elasticsearch
+      volumes:
+      - name: nfs-client-root
+        nfs:
+          server: 192.168.17.206
+          path: /data/nfs/elasticsearch

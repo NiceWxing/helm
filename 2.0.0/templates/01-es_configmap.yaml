@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: hotes-config
+data:
+  elasticsearch.yml: |
+    node.name: ${HOSTNAME}  
+    cluster.name: hotes-backup 
+    network.host: "0.0.0.0"
+    bootstrap.memory_lock: false
+    discovery.zen.ping.unicast.hosts: esnode-0.hotes-cluster-9300.skywalking.svc.cluster.local.,esnode-1.hotes-cluster-9300.skywalking.svc.cluster.local.,esnode-2.hotes-cluster-9300.skywalking.svc.cluster.local.
+    discovery.zen.minimum_master_nodes: 1

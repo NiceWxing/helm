@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hotes-cluster-9300
+spec:
+  clusterIP: None
+  selector:
+    app: esnode
+  ports:
+    - port: 9300
+      name: inner
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hotes-cluster-9200
+spec:
+  selector:
+    app: esnode
+  ports:
+    - name: http
+      port: 9200
+      targetPort: 9200
+      nodePort: 31105
+  type: NodePort

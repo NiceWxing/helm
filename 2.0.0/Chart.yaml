@@ -1,0 +1,8 @@
+description: elasticsearch
+keywords:
+- elasticsearch
+maintainers:
+- email: 
+  name: wangxin
+name: elasticsearch
+version: 2.0.0
