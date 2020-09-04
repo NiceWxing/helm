@@ -26,7 +26,7 @@ spec:
       # non root user.
       # https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#_notes_for_production_use_and_defaults
       - name: fix-the-volume-permission
-        image: busybox
+        image: 192.168.37.30/library/busybox
         imagePullPolicy: IfNotPresent
         command:
         - sh
@@ -41,7 +41,7 @@ spec:
       # To increase the default vm.max_map_count to 262144
       # https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#docker-cli-run-prod-mode
       - name: increase-the-vm-max-map-count
-        image: busybox
+        image: 192.168.37.30/library/busybox
         imagePullPolicy: IfNotPresent
         command:
         - sysctl
@@ -52,7 +52,7 @@ spec:
       # To increase the ulimit
       # https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#_notes_for_production_use_and_defaults
       - name: increase-the-ulimit
-        image: busybox
+        image: 192.168.37.30/library/busybox
         imagePullPolicy: IfNotPresent
         command:
         - sh
@@ -76,7 +76,7 @@ spec:
               add:
                 - IPC_LOCK
                 - SYS_RESOURCE
-          image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.3.2
+          image: 192.168.37.30/library/docker.elastic.co/elasticsearch/elasticsearch-oss
           imagePullPolicy: IfNotPresent
           env:
             - name: ES_JAVA_OPTS
@@ -119,4 +119,4 @@ spec:
         accessModes: [ "ReadWriteOnce" ]
         resources:
           requests:
-            storage: 15Gi
+            storage: 5Gi
