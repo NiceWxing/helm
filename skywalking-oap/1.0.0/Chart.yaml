@@ -1,0 +1,8 @@
+description: skywalking-oap
+keywords:
+- skywalking-oap
+maintainers:
+- email: 
+  name: wangxin
+name: skywalking-oap
+version: 1.0.0
