@@ -1,7 +1,7 @@
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
-  name: sc-sky-es
+  name: nfs-sky-es
 provisioner: fuseim.pri/ifs
 parameters:
   archiveOnDelete: "false"
