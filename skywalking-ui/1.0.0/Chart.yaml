@@ -1,0 +1,8 @@
+description: skywalking-ui
+keywords:
+- skywalking-ui
+maintainers:
+- email: 
+  name: wangxin
+name: skywalking-ui
+version: 1.0.0
