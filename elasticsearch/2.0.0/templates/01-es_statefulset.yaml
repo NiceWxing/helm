@@ -64,10 +64,10 @@ spec:
         - name: elasticsearch
           resources:
             requests:
-              memory: 3Gi
+              memory: 2Gi
               cpu: 0.01
             limits:
-              memory: 3Gi
+              memory: 2Gi
               cpu: 15
           securityContext:
             privileged: true
