@@ -5,6 +5,8 @@ metadata:
   labels:
     app: esnode
 spec:
+  nodeSelector:
+    deploy.type: elasticsearch
   serviceName: hotes-cluster-9300
   replicas: 3
   selector:
