@@ -64,10 +64,10 @@ spec:
         - name: elasticsearch
           resources:
             requests:
-              memory: 3Gi
+              memory: 1.5Gi
               cpu: 0.01
             limits:
-              memory: 3Gi
+              memory: 1.5Gi
               cpu: 15
           securityContext:
             privileged: true
@@ -80,7 +80,7 @@ spec:
           imagePullPolicy: IfNotPresent
           env:
             - name: ES_JAVA_OPTS
-              value: "-Xms2048m -Xmx2048m"
+              value: "-Xms1024m -Xmx1024m"
             - name: HOSTNAME
               valueFrom:
                 fieldRef:
