@@ -5,8 +5,6 @@ metadata:
   labels:
     app: esnode
 spec:
-  nodeSelector:
-    deploy.type: elasticsearch
   serviceName: hotes-cluster-9300
   replicas: 3
   selector:
@@ -19,6 +17,8 @@ spec:
       labels:
         app: esnode
     spec:
+      nodeSelector:
+        deploy.type: elasticsearch
       serviceAccountName: nfs-sky-es
       terminationGracePeriodSeconds: 300
       initContainers:
